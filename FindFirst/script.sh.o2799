@@ -1,0 +1,17 @@
+
+Time takes to find min in array using 1 Thread & Granularity 100000
+
+0.00569
+Time takes to find min in array using 2 Thread & Granularity 100000
+
+0.005412
+Time takes to find min in array using 4 Thread & Granularity 100000
+
+0.005067
+Time takes to find min in array using 8 Thread & Granularity 100000
+
+0.006078
+Time takes to find min in array using 16 Thread & Granularity 100000
+
+0.005779
+
