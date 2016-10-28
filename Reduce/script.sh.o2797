@@ -1,0 +1,42 @@
+
+Time takes to find min in array using 1 Thread & Granularity 1000
+Time taken to find the minimum value in the array is: 3.38333 milliseconds.
+
+
+Time takes to find min in array using 2 Thread & Granularity 1000
+Time taken to find the minimum value in the array is: 3.39946 milliseconds.
+
+
+Time takes to find min in array using 4 Thread & Granularity 1000
+Time taken to find the minimum value in the array is: 3.38376 milliseconds.
+
+
+Time takes to find min in array using 8 Thread & Granularity 1000
+Time taken to find the minimum value in the array is: 3.40149 milliseconds.
+
+
+Time takes to find min in array using 16 Thread & Granularity 1000
+Time taken to find the minimum value in the array is: 3.3872 milliseconds.
+
+
+
+Time takes to find min in array using 1 Thread & Granularity 100000
+Time taken to find the minimum value in the array is: 1.86961 milliseconds.
+
+
+Time takes to find min in array using 2 Thread & Granularity 100000
+Time taken to find the minimum value in the array is: 1.85664 milliseconds.
+
+
+Time takes to find min in array using 4 Thread & Granularity 100000
+Time taken to find the minimum value in the array is: 1.86585 milliseconds.
+
+
+Time takes to find min in array using 8 Thread & Granularity 100000
+Time taken to find the minimum value in the array is: 1.84665 milliseconds.
+
+
+Time takes to find min in array using 16 Thread & Granularity 100000
+Time taken to find the minimum value in the array is: 1.85474 milliseconds.
+
+
