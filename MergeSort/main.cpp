@@ -28,13 +28,13 @@ int main(int argc, char* argv[]){
   }
 
   gettimeofday(&_start, NULL);
-  #pragma omp parallel
-  {
-    #pragma omp single
-    {
+ // #pragma omp parallel
+  //{
+    //#pragma omp single
+    //{
        mergeSort(0, n, arrayA, arrayB);
-    }
-  }
+    //}
+  //}
   gettimeofday(&_end, NULL);
   
   execTime = (double)((_end.tv_sec - _start.tv_sec) + ((_end.tv_usec  - _start.tv_usec)/1000000.0));
@@ -46,6 +46,8 @@ int main(int argc, char* argv[]){
 void mergeSort(int minVal, int maxVal, int *arrayA, int*arrayB){
   int middle;
   if(minVal != maxVal){
+   #pragma omp parallel
+   {
     middle = (minVal+maxVal)/2;
     #pragma omp task
      mergeSort(minVal, middle, arrayA, arrayB);
@@ -53,6 +55,7 @@ void mergeSort(int minVal, int maxVal, int *arrayA, int*arrayB){
      mergeSort(middle+1, maxVal, arrayA, arrayB);
     #pragma omp task
      merge(minVal, middle, (maxVal - minVal)+1, arrayA, arrayB);
+   }
   }else{
     return;
   }
