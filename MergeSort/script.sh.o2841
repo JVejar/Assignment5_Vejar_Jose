@@ -1,0 +1,17 @@
+
+Time takes to perform MergeSort on an array of size 10^9 using 1 Thread
+
+3276.63
+Time takes to perform MergeSort on an array of size 10^9 using 2 Threads
+
+3317.37
+Time takes to perform MergeSort on an array of size 10^9 using 4 Threads
+
+3251.18
+Time takes to perform MergeSort on an array of size 10^9 using 8 Threads
+
+3268.87
+Time takes to perform MergeSort on an array of size 10^9 using 16 Threads
+
+3289.35
+
