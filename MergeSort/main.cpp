@@ -28,13 +28,13 @@ int main(int argc, char* argv[]){
   }
 
   gettimeofday(&_start, NULL);
- // #pragma omp parallel
-  //{
-    //#pragma omp single
-    //{
+  #pragma omp parallel
+  {
+    #pragma omp single
+    {
        mergeSort(0, n, arrayA, arrayB);
-    //}
-  //}
+    }
+  }
   gettimeofday(&_end, NULL);
   
   execTime = (double)((_end.tv_sec - _start.tv_sec) + ((_end.tv_usec  - _start.tv_usec)/1000000.0));
@@ -64,7 +64,28 @@ void merge(int minVal, int middle, int arrayLength, int *arrayA, int *arrayB){
   int minTemp, midTemp;
   minTemp = minVal;
   midTemp = middle + 1;
+  int temp = minVal;  
 
+  while ((minTemp<=middle)&&(midTemp<=arrayLength)){
+   if(arrayA[minTemp] <= arrayA[midTemp]){
+     arrayB[temp] = arrayA[minTemp];
+     minTemp++;}
+   else{
+     arrayB[temp] = arrayA[midTemp];
+     midTemp++;
+   temp++;}
+  }
+  if(minTemp>middle)
+  {
+    for(int i=midTemp; i<=arrayLength; i++){
+     arrayB[temp] = arrayA[i];
+     i++;}
+  }else{
+    for(int i=minTemp; i<=midTemp; i++){
+     arrayB[temp] = arrayA[i];
+     i++;}
+  }
+  /*
   for(int i=minVal; i < arrayLength; i++){
     if(arrayA[minTemp] < arrayA[midTemp]){
      arrayB[i] = arrayA[minTemp];
@@ -77,6 +98,7 @@ void merge(int minVal, int middle, int arrayLength, int *arrayA, int *arrayB){
      minTemp++;
     }
   }
+  */
   for(int i=minVal; i < arrayLength; i++){
    arrayA[i] = arrayB[i];
   }
